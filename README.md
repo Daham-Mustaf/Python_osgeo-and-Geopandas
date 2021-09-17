@@ -40,7 +40,7 @@ print(sp_data.head())
 sp_data.plot()
 
 ```
-
+simple program that reads the features out of a shapefile.
 
 ```bash
 cd /usr/ports/databases/pgRouting
