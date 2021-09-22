@@ -3,9 +3,7 @@
 1. [GeoPandas Introduction:](#introduction)
 - [Unlocking the shapefile osgeo.ogr:](#un)
 - [Read shape file:](#read)
-- [pgRouting Installing in the database](#ex)
-- [Upgrading the database:](#up)
-3. [Step One](#one)
+
 
 
 ## GeoPandas Introduction <a name="introduction"></a>
@@ -74,69 +72,4 @@ print(sp_data.head())
 sp_data.plot()
 
 ```
-simple program that reads the features out of a shapefile.
-
-```bash
-cd /usr/ports/databases/pgRouting
-```
-```bash
-make install clean
-```
-or package:
-```bash
-pkg install pgrouting
-```
-Homebrew
-```bash
-brew install pgrouting
-```
-git
-
-To download the repository
-```bash
-git clone git://github.com/pgRouting/pgrouting.git
-cd pgrouting
-git checkout v3.1.3
-```
-
-### Installing the pgRouting extension<a name="ex"></a>
-Many distributions of PostGIS are equipped with pgRouting already. Execute the following SQL to check whether you have pgRouting onboard:
-```j
-   select pgr_version();
-   ```   
-Once you have the binaries set up, enable the extension by executing the following:
-createdb routing
-```j
-psql routing -c 'CREATE EXTENSION PostGIS'
-psql routing -c 'CREATE EXTENSION pgRouting'
-  ```
-  or
-```j
-    CREATE EXTENSION pgrouting;
-   ```
-   At this stage, we should be ready to continue with pgRouting.
-   
- ### Upgrading the database: <a name="up"></a>
-   Upgrading:
-  ```j 
-   ALTER EXTENSION pgrouting UPDATE TO "2.2.3";
-  ```
-    
-## Step One:<a name="one"></a>
-
-Requirments 
-1- PostgresSql
-2- Postgis
-3- Pgrouting
- ```j
- SELECT PostGIS_Version();
-			
-     ```
-   ```shel   
-postgres -V >postgresVersion.txt
-psql -V
-
-cd pgrouting
-git checkout v3.1.3
-  ```
 
